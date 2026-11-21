@@ -1,18 +1,40 @@
 var express = require('express');
 var router = express.Router();
+var Reservation = require('../models/Reservation');
 
-// Display all reservations
-router.get('/', function(req, res, next) {
-  res.render('reservations/index', {
-    title: 'StudySphere | Reservations'
-  });
+router.get('/', async function(req, res, next) {
+  try {
+    var reservations = await Reservation.find().sort({ date: 1, startTime: 1 });
+    res.render('reservations/index', {
+      title: 'StudySphere | Reservations',
+      reservations: reservations
+    });
+  } catch (err) {
+    next(err);
+  }
 });
 
-// Display the new reservation form
-router.get('/new', function(req, res, next) {
+router.get('/new', function(req, res) {
   res.render('reservations/new', {
     title: 'StudySphere | Book a Room'
   });
+});
+
+router.post('/', async function(req, res, next) {
+  try {
+    var reservation = new Reservation({
+      studentName: req.body.studentName,
+      room: req.body.room,
+      date: req.body.date,
+      startTime: req.body.startTime,
+      endTime: req.body.endTime
+    });
+
+    await reservation.save();
+    res.redirect('/reservations');
+  } catch (err) {
+    next(err);
+  }
 });
 
 module.exports = router;

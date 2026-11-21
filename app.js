@@ -9,6 +9,17 @@ var usersRouter = require('./routes/users');
 
 var reservationsRouter = require('./routes/reservations');
 
+require('dotenv').config();
+var mongoose = require('mongoose');
+
+mongoose.connect(process.env.MONGODB_URI)
+  .then(function() {
+    console.log('Connected to StudySphere database');
+  })
+  .catch(function(err) {
+    console.error('MongoDB connection error:', err.message);
+  });
+
 var app = express();
 
 // view engine setup
