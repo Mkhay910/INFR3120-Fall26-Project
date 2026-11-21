@@ -46,6 +46,12 @@
                 <td><%= reservation.startTime %></td>
                 <td><%= reservation.endTime %></td>
                 <td>
+                  <a href="/reservations/<%= reservation._id %>/edit">Edit</a>
+                  <form action="/reservations/<%= reservation._id %>/delete" method="POST">
+                    <button type="submit" class="delete-button">Delete</button>
+                  </form>
+                </td>
+                <td>
                   <form action="/reservations/<%= reservation._id %>/delete" method="POST">
                     <button type="submit" class="delete-button">Delete</button>
                   </form>

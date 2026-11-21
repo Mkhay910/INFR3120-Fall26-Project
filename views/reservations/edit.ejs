@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="/" class="brand">StudySphere</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/reservations">Reservations</a>
+      <a href="/reservations/new">Book a Room</a>
+    </div>
+  </nav>
+  <main class="dashboard">
+    <h1>Edit Reservation</h1>
+    <form action="/reservations/<%= reservation._id %>/edit" method="POST" class="booking-form">
+      <label>Student Name</label>
+      <input type="text" name="studentName" value="<%= reservation.studentName %>" required>
+      <label>Study Room</label>
+      <select name="room" required>
+        <% ['Quiet Study Room', 'Group Study Room', 'Computer Study Room', 'Open Study Space'].forEach(function(room) { %>
+          <option value="<%= room %>" <%= reservation.room === room ? 'selected' : '' %>><%= room %></option>
+        <% }); %>
+      </select>
+      <label>Date</label>
+      <input type="date" name="date" value="<%= reservation.date %>" required>
+      <label>Start Time</label>
+      <input type="time" name="startTime" value="<%= reservation.startTime %>" required>
+      <label>End Time</label>
+      <input type="time" name="endTime" value="<%= reservation.endTime %>" required>
+      <button type="submit" class="primary-button">Save Changes</button>
+    </form>
+  </main>
+</body>
+</html>
