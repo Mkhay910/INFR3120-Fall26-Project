@@ -37,4 +37,14 @@ router.post('/', async function(req, res, next) {
   }
 });
 
+
+router.post('/:id/delete', async function(req, res, next) {
+  try {
+    await Reservation.findByIdAndDelete(req.params.id);
+    res.redirect('/reservations');
+  } catch (err) {
+    next(err);
+  }
+});
+
 module.exports = router;

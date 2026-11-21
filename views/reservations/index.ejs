@@ -34,6 +34,7 @@
               <th>Date</th>
               <th>Start Time</th>
               <th>End Time</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -44,6 +45,11 @@
                 <td><%= reservation.date %></td>
                 <td><%= reservation.startTime %></td>
                 <td><%= reservation.endTime %></td>
+                <td>
+                  <form action="/reservations/<%= reservation._id %>/delete" method="POST">
+                    <button type="submit" class="delete-button">Delete</button>
+                  </form>
+                </td>
               </tr>
             <% }); %>
           </tbody>
