@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="/" class="brand">
+      <span class="brand-icon">S</span>
+      <span>StudySphere</span>
+    </a>
+
+    <nav>
+      <a href="/">Home</a>
+      <a href="/reservations">Reservations</a>
+    </nav>
+
+    <a href="/reservations/new" class="nav-button">Book a Room</a>
+  </header>
+
+  <main class="dashboard">
+    <div class="dashboard-heading">
+      <span class="eyebrow">YOUR STUDY SCHEDULE</span>
+      <h1>Reservations</h1>
+      <p>Manage and keep track of your campus study room bookings.</p>
+    </div>
+
+    <div class="dashboard-actions">
+      <h2>All Reservations</h2>
+      <a href="/reservations/new" class="primary-button">+ New Reservation</a>
+    </div>
+
+    <div class="table-container">
+      <table class="reservation-table">
+        <thead>
+          <tr>
+            <th>Student Name</th>
+            <th>Study Room</th>
+            <th>Date</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td colspan="6">No reservations yet. Create your first booking!</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <a href="/" class="brand">
+      <span class="brand-icon">S</span>
+      <span>StudySphere</span>
+    </a>
+    <p>Designed for students, built for better study sessions.</p>
+    <span>© 2026 StudySphere</span>
+  </footer>
+
+</body>
+</html>

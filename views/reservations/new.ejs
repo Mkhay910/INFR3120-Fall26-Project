@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+  <header class="navbar">
+    <a href="/" class="brand">
+      <span class="brand-icon">S</span>
+      <span>StudySphere</span>
+    </a>
+
+    <nav>
+      <a href="/">Home</a>
+      <a href="/reservations">Reservations</a>
+    </nav>
+
+    <a href="/reservations" class="nav-button">View Bookings</a>
+  </header>
+
+  <main class="booking-page">
+    <div class="booking-heading">
+      <span class="eyebrow">PLAN YOUR NEXT STUDY SESSION</span>
+      <h1>Reserve your study space.</h1>
+      <p>Enter your details below to create a campus study room reservation.</p>
+    </div>
+
+    <form class="booking-form" action="/reservations" method="POST">
+
+      <div class="form-group">
+        <label for="studentName">Student Name</label>
+        <input
+          type="text"
+          id="studentName"
+          name="studentName"
+          placeholder="Enter your full name"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="room">Study Room</label>
+        <select id="room" name="room" required>
+          <option value="">Select a study room</option>
+          <option value="Quiet Study Room">Quiet Study Room</option>
+          <option value="Group Study Room">Group Study Room</option>
+          <option value="Computer Study Room">Computer Study Room</option>
+          <option value="Open Study Space">Open Study Space</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="date">Reservation Date</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+
+        <div class="form-group">
+          <label for="startTime">Start Time</label>
+          <input type="time" id="startTime" name="startTime" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="endTime">End Time</label>
+        <input type="time" id="endTime" name="endTime" required>
+      </div>
+
+      <div class="form-actions">
+        <a href="/reservations" class="secondary-button">Cancel</a>
+        <button type="submit" class="primary-button">Create Reservation →</button>
+      </div>
+
+    </form>
+  </main>
+
+  <footer>
+    <a href="/" class="brand">
+      <span class="brand-icon">S</span>
+      <span>StudySphere</span>
+    </a>
+    <p>Designed for students, built for better study sessions.</p>
+    <span>© 2026 StudySphere</span>
+  </footer>
+</body>
+</html>

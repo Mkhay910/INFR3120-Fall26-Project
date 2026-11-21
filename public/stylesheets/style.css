@@ -1,0 +1,290 @@
+/* Tablet layout: 481px–960px */
+@media (max-width: 960px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 65px 7%;
+  }
+
+  .hero-visual {
+    max-width: 550px;
+    width: 100%;
+    margin: auto;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .navbar {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  footer {
+    flex-wrap: wrap;
+  }
+}
+
+
+/* Mobile layout: 480px and below */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 16px 5%;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .navbar nav {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .navbar nav a {
+    font-size: 12px;
+  }
+
+  .nav-button {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+
+  .hero {
+    padding: 55px 6%;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+    letter-spacing: -1px;
+  }
+
+  .hero-actions {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .hero-visual {
+    padding: 10px 5px 25px;
+  }
+
+  .visual-card {
+    padding: 20px;
+  }
+
+  .visual-card h2 {
+    font-size: 21px;
+  }
+
+  .visual-details {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .floating-card {
+    right: 0;
+    bottom: 0;
+    padding: 12px;
+  }
+
+  .features {
+    padding: 55px 6%;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading h2 {
+    font-size: 26px;
+  }
+
+  .closing {
+    padding: 55px 6%;
+  }
+
+  .closing h2 {
+    font-size: 24px;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Reservation dashboard */
+.dashboard {
+  min-height: 65vh;
+  padding: 75px 10%;
+}
+
+.dashboard-heading h1,
+.booking-heading h1 {
+  margin: 12px 0;
+  font-family: 'Manrope', sans-serif;
+  font-size: 38px;
+}
+
+.dashboard-heading p,
+.booking-heading p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.dashboard-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin: 45px 0 20px;
+}
+
+.dashboard-actions h2 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 21px;
+}
+
+.table-container {
+  overflow-x: auto;
+  background: var(--white);
+  border: 1px solid #e8edf3;
+  border-radius: 12px;
+}
+
+.reservation-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 13px;
+}
+
+.reservation-table th,
+.reservation-table td {
+  padding: 18px;
+  border-bottom: 1px solid #e8edf3;
+  white-space: nowrap;
+}
+
+.reservation-table th {
+  background: #edf5f5;
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.reservation-table td {
+  color: var(--muted);
+  text-align: center;
+}
+
+/* Booking form */
+.booking-page {
+  min-height: 75vh;
+  padding: 70px 7%;
+}
+
+.booking-heading {
+  max-width: 650px;
+  margin: 0 auto 35px;
+  text-align: center;
+}
+
+.booking-form {
+  max-width: 650px;
+  margin: auto;
+  padding: 35px;
+  background: var(--white);
+  border: 1px solid #e8edf3;
+  border-radius: 14px;
+  box-shadow: 0 12px 35px rgba(23, 36, 59, 0.05);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-bottom: 22px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  min-height: 46px;
+  padding: 12px 14px;
+  border: 1px solid #dce3eb;
+  border-radius: 7px;
+  background: var(--white);
+  color: var(--navy);
+  font: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.form-actions button {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+@media (max-width: 480px) {
+  .dashboard {
+    padding: 50px 6%;
+  }
+
+  .dashboard-heading h1,
+  .booking-heading h1 {
+    font-size: 30px;
+  }
+
+  .dashboard-actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .booking-page {
+    padding: 45px 6%;
+  }
+
+  .booking-form {
+    padding: 22px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .form-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .form-actions a,
+  .form-actions button {
+    text-align: center;
+  }
+}
